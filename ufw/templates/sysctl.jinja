@@ -1,4 +1,4 @@
-{% set ufw = pillar.get('ufw:settings', {}) -%}
+{% set ufw = pillar.get('ufw:sysctl', {}) -%}
 {% set forwarding = ufw.get('forwarding', 0) -%}
 {% set rp_filter = ufw.get('rp_filter', 1) -%}
 {% set accept_source_route = ufw.get('accept_source_route', 0) -%}
