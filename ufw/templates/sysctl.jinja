@@ -1,16 +1,16 @@
-{% set ufw = pillar.get('ufw:sysctl', {}) -%}
-{% set forwarding = ufw.get('forwarding', 0) -%}
-{% set rp_filter = ufw.get('rp_filter', 1) -%}
-{% set accept_source_route = ufw.get('accept_source_route', 0) -%}
-{% set accept_redirects = ufw.get('accept_redirects', 0) -%}
-{% set icmp_echo_ignore_broadcasts = ufw.get('icmp_echo_ignore_broadcasts', 1) -%}
-{% set icmp_ignore_bogus_error_responses = ufw.get('icmp_ignore_bogus_error_responses', 1) -%}
-{% set icmp_echo_ignore_all = ufw.get('icmp_echo_ignore_all', 0) -%}
-{% set log_martians = ufw.get('log_martians', 0) -%}
-{% set tcp_syncookies = ufw.get('tcp_syncookies', 0) -%}
-{% set tcp_sack = ufw.get('tcp_sack', 1) -%}
-{% set ipv6_autoconf = ufw.get('ipv6_autoconf', 1) -%}
-{% set use_tempaddr = ufw.get('use_tempaddr', 1) -%}
+{% set ufw_cfg = pillar.get('ufw:sysctl', {}) -%}
+{% set forwarding = ufw_cfg.get('forwarding', 0) -%}
+{% set rp_filter = ufw_cfg.get('rp_filter', 1) -%}
+{% set accept_source_route = ufw_cfg.get('accept_source_route', 0) -%}
+{% set accept_redirects = ufw_cfg.get('accept_redirects', 0) -%}
+{% set icmp_echo_ignore_broadcasts = ufw_cfg.get('icmp_echo_ignore_broadcasts', 1) -%}
+{% set icmp_ignore_bogus_error_responses = ufw_cfg.get('icmp_ignore_bogus_error_responses', 1) -%}
+{% set icmp_echo_ignore_all = ufw_cfg.get('icmp_echo_ignore_all', 0) -%}
+{% set log_martians = ufw_cfg.get('log_martians', 0) -%}
+{% set tcp_syncookies = ufw_cfg.get('tcp_syncookies', 0) -%}
+{% set tcp_sack = ufw_cfg.get('tcp_sack', 1) -%}
+{% set ipv6_autoconf = ufw_cfg.get('ipv6_autoconf', 1) -%}
+{% set use_tempaddr = ufw_cfg.get('use_tempaddr', 1) -%}
 # File managed by Salt. Do not edit manually.
 #
 # Configuration file for setting network variables. Please note these settings

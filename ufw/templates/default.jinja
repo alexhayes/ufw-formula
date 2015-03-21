@@ -1,12 +1,12 @@
-{% set ufw = pillar.get('ufw:settings', {}) -%}
-{% set ipv6 = "yes" if ufw.get('ipv6', True) else "no" -%}
-{% set default_input_policy = ufw.get('default_input_policy', 'DROP') -%}
-{% set default_output_policy = ufw.get('default_output_policy', 'ACCEPT') -%}
-{% set default_forward_policy = ufw.get('default_forward_policy', 'DROP') -%}
-{% set default_application_policy = ufw.get('default_application_policy', 'DROP') -%}
-{% set manage_builtins = "yes" if ufw.get('manage_builtins', False) else "no" -%}
-{% set ipt_sysctl = ufw.get('ipt_sysctl', '/etc/ufw/sysctl.conf') -%}
-{% set ipt_modules = ufw.get('ipt_modules', ['nf_conntrack_ftp', 'nf_nat_ftp', 'nf_conntrack_netbios_ns'])|join(" ") -%}
+{% set ufw_cfg = pillar.get('ufw:settings', {}) -%}
+{% set ipv6 = "yes" if ufw_cfg.get('ipv6', True) else "no" -%}
+{% set default_input_policy = ufw_cfg.get('default_input_policy', 'DROP') -%}
+{% set default_output_policy = ufw_cfg.get('default_output_policy', 'ACCEPT') -%}
+{% set default_forward_policy = ufw_cfg.get('default_forward_policy', 'DROP') -%}
+{% set default_application_policy = ufw_cfg.get('default_application_policy', 'DROP') -%}
+{% set manage_builtins = "yes" if ufw_cfg.get('manage_builtins', False) else "no" -%}
+{% set ipt_sysctl = ufw_cfg.get('ipt_sysctl', '/etc/ufw/sysctl.conf') -%}
+{% set ipt_modules = ufw_cfg.get('ipt_modules', ['nf_conntrack_ftp', 'nf_nat_ftp', 'nf_conntrack_netbios_ns'])|join(" ") -%}
 
 # /etc/default/ufw
 #
