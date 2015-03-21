@@ -5,7 +5,7 @@
 {% set default_application_policy = ufw.get('default_application_policy', 'DROP') -%}
 {% set manage_builtins = "yes" if ufw.get('manage_builtins', False) else "no" -%}
 {% set ipt_sysctl = ufw.get('ipt_sysctl', '/etc/ufw/sysctl.conf') -%}
-{% set ipt_modules = ufw.get('ipt_modules', [nf_conntrack_ftp, nf_nat_ftp, nf_conntrack_netbios_ns])|join(" ") -%}
+{% set ipt_modules = ufw.get('ipt_modules', ['nf_conntrack_ftp', 'nf_nat_ftp', 'nf_conntrack_netbios_ns'])|join(" ") -%}
 
 # /etc/default/ufw
 #
