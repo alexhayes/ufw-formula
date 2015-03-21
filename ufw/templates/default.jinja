@@ -1,6 +1,7 @@
 {% set ufw = pillar.get('ufw:settings', {}) -%}
 {% set ipv6 = "yes" if ufw.get('ipv6', True) else "no" -%}
-{% set default_input_policy = ufw.get('default_input_policy', 'ACCEPT') -%}
+{% set default_input_policy = ufw.get('default_input_policy', 'DROP') -%}
+{% set default_output_policy = ufw.get('default_output_policy', 'ACCEPT') -%}
 {% set default_forward_policy = ufw.get('default_forward_policy', 'DROP') -%}
 {% set default_application_policy = ufw.get('default_application_policy', 'DROP') -%}
 {% set manage_builtins = "yes" if ufw.get('manage_builtins', False) else "no" -%}
@@ -18,7 +19,7 @@ IPV6={{ ipv6 }}
 
 # Set the default input policy to ACCEPT, DROP, or REJECT. Please note that if
 # you change this you will most likely want to adjust your rules.
-DEFAULT_INPUT_POLICY="{{ ipv6 }}"
+DEFAULT_INPUT_POLICY="{{ default_input_policy }}"
 
 # Set the default output policy to ACCEPT, DROP, or REJECT. Please note that if
 # you change this you will most likely want to adjust your rules.
