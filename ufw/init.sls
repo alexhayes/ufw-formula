@@ -11,6 +11,7 @@ ufw:
     - enable: True
     - watch:
       - file: /etc/default/ufw
+      - file: /etc/ufw/sysctl.conf
   ufw:
     - enabled
     - require:
