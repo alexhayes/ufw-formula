@@ -4,7 +4,7 @@
 {% set default_input_policy = settings_cfg.get('default_input_policy', 'DROP') -%}
 {% set default_output_policy = settings_cfg.get('default_output_policy', 'ACCEPT') -%}
 {% set default_forward_policy = settings_cfg.get('default_forward_policy', 'DROP') -%}
-{% set default_application_policy = settings_cfg.get('default_application_policy', 'DROP') -%}
+{% set default_application_policy = settings_cfg.get('default_application_policy', 'SKIP') -%}
 {% set manage_builtins = "yes" if settings_cfg.get('manage_builtins', False) else "no" -%}
 {% set ipt_sysctl = settings_cfg.get('ipt_sysctl', '/etc/ufw/sysctl.conf') -%}
 {% set ipt_modules = settings_cfg.get('ipt_modules', ['nf_conntrack_ftp', 'nf_nat_ftp', 'nf_conntrack_netbios_ns'])|join(" ") -%}
