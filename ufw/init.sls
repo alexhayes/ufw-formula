@@ -66,7 +66,7 @@ ufw-svc-{{service_name}}-{{from_addr}}:
 
 ufw-app-{{app_name}}:
   ufw.allowed:
-    - app: {{app_name}}
+    - app: '"{{app_name}}"'
     - require:
       - pkg: ufw
 
